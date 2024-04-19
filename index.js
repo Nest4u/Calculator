@@ -1,12 +1,15 @@
-
+"use strict";
     function calc(){
-    let count;
+    let memory;
    
 function add(a,b){
     return a + b;
 }
 function subtract(a,b){
     return a - b;
+}
+function getCurrentResult() {
+    return memory;
 }
 
    
@@ -23,13 +26,13 @@ function subtract(a,b){
             return result;
         },
         saveResult: function() {
-            memory = this.currentResult(); 
+            memory = getCurrentResult(); 
         },
         clearMemory: function() {
             memory = 0;  
         },
         currentResult: function() {
-            return `Current result: ${String(memory)}`;
+            return `Current result: ${memory}`;
         }
     }
     }
